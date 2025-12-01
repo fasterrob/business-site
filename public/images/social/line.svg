@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .bg { fill: #00C300; }
+      .text { fill: #ffffff; font: 700 7px/1 Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+  <path class="bg" d="M12 2c5.523 0 10 3.582 10 8 0 4.418-4.477 8-10 8-.781 0-1.541-.07-2.272-.205l-3.172 2.02c-.39.249-.879-.095-.787-.539l.612-2.942C4.255 14.977 2 12.7 2 10c0-4.418 4.477-8 10-8Z"/>
+  <text class="text" x="12" y="13" text-anchor="middle">LINE</text>
+</svg>

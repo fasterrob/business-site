@@ -170,7 +170,7 @@ export default function Vision() {
 
           <div className="text-center mt-10">
             <Link
-              href="/work"
+              href="/project"
               className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
             >
               View Our Project Portfolio
@@ -208,8 +208,8 @@ export default function Vision() {
               Contact Us
             </button>
             <Link
-              href="/work"
-              className="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors"
+              href="/project"
+              className="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg_white/10 transition-colors"
             >
               View Our Projects
             </Link>

@@ -1,8 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import LoadingScreen from "./components/LoadingScreen";
+import dynamic from "next/dynamic";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
+
+const LoadingScreen = dynamic(() => import("./components/LoadingScreen"), {
+  ssr: false,
+});
 
 // Define our background images
 const BACKGROUND_IMAGES = [

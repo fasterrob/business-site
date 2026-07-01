@@ -26,7 +26,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-900 text-white">
+    <main className="min-h-screen bg-slate-50 text-slate-500">
       <section className="px-4 pt-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -91,13 +91,13 @@ export default function Contact() {
 
       <section className="py-10 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-800 rounded-xl p-6 shadow-lg">
-              <h2 className="text-xl font-bold mb-4">Get in touch</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <div className="bg-white rounded-xl p-7 shadow-sm border border-slate-200 lg:col-span-5">
+              <h2 className="text-xl font-bold mb-4 text-blue-900">ช่องทางติดต่อ</h2>
               <div className="space-y-4">
                 <a
                   href="tel:+6623456789"
-                  className="flex items-center gap-3 text-blue-400 hover:text-blue-300"
+                  className="flex items-center gap-3 text-blue-900 hover:text-orange-500"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ export default function Contact() {
                 </a>
                 <a
                   href="mailto:info@buildingservices.com"
-                  className="flex items-center gap-3 text-blue-400 hover:text-blue-300"
+                  className="flex items-center gap-3 text-blue-900 hover:text-orange-500 break-all"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@ export default function Contact() {
                 <div className="flex items-start gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-blue-400"
+                    className="h-5 w-5 text-blue-900"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -157,8 +157,8 @@ export default function Contact() {
                     />
                   </svg>
                   <div>
-                    <p className="text-sm">123 Sukhumvit Road, Bangkok</p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-sm text-slate-700">123 Sukhumvit Road, Bangkok</p>
+                    <p className="text-xs text-slate-500">
                       Mon-Fri 9:00-18:00 | Sat 9:00-13:00
                     </p>
                   </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                 <div className="flex gap-3 pt-2">
                   <a
                     href="https://www.facebook.com/buildingservices"
-                    className="text-blue-400 hover:text-blue-300"
+                    className="text-blue-900 hover:text-orange-500"
                     aria-label="Facebook"
                   >
                     <svg
@@ -183,7 +183,7 @@ export default function Contact() {
                   </a>
                   <a
                     href="https://line.me/ti/p/@buildingservices"
-                    className="text-blue-400 hover:text-blue-300"
+                    className="text-blue-900 hover:text-orange-500"
                     aria-label="Line"
                   >
                     <svg
@@ -197,97 +197,91 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+            </div>
 
-              <div className="md:col-span-2 bg-gray-800 rounded-xl p-6 shadow-lg">
-                <h2 className="text-xl font-bold mb-4">Send a message</h2>
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  {submitted ? (
-                    <div className="bg-green-900/30 border border-green-800 text-green-300 p-2 rounded text-sm flex items-center">
-                      <svg
-                        className="w-4 h-4 mr-2 text-green-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      We received your message.
-                    </div>
-                  ) : null}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="bg-gray-700 border border-gray-600 text-white rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                      placeholder="Your name *"
-                      required
-                    />
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="bg-gray-700 border border-gray-600 text-white rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                      placeholder="Your email *"
-                      required
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <input
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="bg-gray-700 border border-gray-600 text-white rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                      placeholder="Phone"
-                    />
-                    <input
-                      type="text"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      className="bg-gray-700 border border-gray-600 text-white rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
-                      placeholder="Company"
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <select
-                      value={service}
-                      onChange={(e) => setService(e.target.value)}
-                      className="bg-gray-700 border border-gray-600 text-white rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+            <div className="bg-white rounded-xl p-7 shadow-sm border border-slate-200 lg:col-span-5">
+              <h2 className="text-xl font-bold mb-4 text-blue-900">ส่งข้อความ</h2>
+              <form onSubmit={handleSubmit} className="space-y-3">
+                {submitted ? (
+                  <div className="bg-green-50 border border-green-200 text-green-700 p-2 rounded text-sm flex items-center">
+                    <svg
+                      className="w-4 h-4 mr-2 text-green-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
-                      <option value="">Select a service</option>
-                      <option value="residential">
-                        Residential construction
-                      </option>
-                      <option value="commercial">
-                        Commercial construction
-                      </option>
-                      <option value="renovation">
-                        Renovation and remodeling
-                      </option>
-                      <option value="design">Architectural design</option>
-                      <option value="management">Project management</option>
-                    </select>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    ได้รับข้อความแล้ว ทีมงานจะติดต่อกลับโดยเร็ว
                   </div>
-                  <textarea
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="bg-gray-700 border border-gray-600 text-white rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 min-h-[120px]"
-                    placeholder="Tell us about your project *"
+                ) : null}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="bg-white border border-slate-300 text-slate-700 rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500"
+                    placeholder="ชื่อ-นามสกุล *"
                     required
                   />
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-white border border-slate-300 text-slate-700 rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500"
+                    placeholder="อีเมล *"
+                    required
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="bg-white border border-slate-300 text-slate-700 rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500"
+                    placeholder="เบอร์โทร"
+                  />
+                  <input
+                    type="text"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className="bg-white border border-slate-300 text-slate-700 rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500"
+                    placeholder="บริษัท/หน่วยงาน"
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <select
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
+                    className="bg-white border border-slate-300 text-slate-700 rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500"
                   >
-                    Submit
-                  </button>
-                </form>
-              </div>
+                    <option value="">เลือกบริการที่สนใจ</option>
+                    <option value="residential">งานก่อสร้างที่อยู่อาศัย</option>
+                    <option value="commercial">งานก่อสร้างเชิงพาณิชย์</option>
+                    <option value="renovation">รีโนเวทและปรับปรุง</option>
+                    <option value="design">ออกแบบสถาปัตยกรรม</option>
+                    <option value="management">บริหารโครงการ</option>
+                  </select>
+                </div>
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="bg-white border border-slate-300 text-slate-700 rounded w-full p-2 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500 min-h-[120px]"
+                  placeholder="รายละเอียดโครงการ/ความต้องการ *"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm rounded transition-colors"
+                >
+                  ส่งข้อความ
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -295,7 +289,7 @@ export default function Contact() {
 
       <section className="px-4 pb-12">
         <div className="container mx-auto max-w-6xl">
-          <div className="rounded-xl overflow-hidden bg-gray-800">
+          <div className="rounded-xl overflow-hidden bg-white border border-slate-200 shadow-sm">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5957299802857!2d100.55995031531878!3d13.737524890355506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee94a8c28a7%3A0xfc69e2df4ab3b3b4!2sSukhumvit%20Rd%2C%20Khlong%20Toei%2C%20Bangkok%2C%20Thailand!5e0!3m2!1sen!2us!4v1622585347076!5m2!1sen!2us"
               className="w-full h-[320px] border-0"

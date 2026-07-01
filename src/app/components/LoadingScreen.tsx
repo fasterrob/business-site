@@ -1,87 +1,94 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, Text, PerspectiveCamera } from "@react-three/drei";
+import { Text, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 
-// Building block component
-type BuildingBlockProps = {
+type HousePartProps = {
   position: [number, number, number];
+  size: [number, number, number];
+  delay: number;
   color: string;
-  scale?: number;
-  rotationSpeed?: number;
+  wireframe?: boolean;
+  opacity?: number;
 };
 
-const BuildingBlock = ({
-  position,
-  color,
-  scale = 1,
-  rotationSpeed = 0.01,
-}: BuildingBlockProps) => {
+const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+const HousePart = ({ position, size, delay, color, wireframe, opacity = 0.9 }: HousePartProps) => {
   const meshRef = useRef<THREE.Mesh>(null);
+  const from = useRef(new THREE.Vector3(position[0], position[1] - 2, position[2]));
+  const to = useRef(new THREE.Vector3(position[0], position[1], position[2]));
 
-  useFrame((_state, delta) => {
-    if (meshRef.current) {
-      // Rotate the cube
-      meshRef.current.rotation.x += rotationSpeed * delta * 15;
-      meshRef.current.rotation.y += rotationSpeed * delta * 10;
-
-      // Add a slight floating animation
-      meshRef.current.position.y =
-        position[1] + Math.sin(_state.clock.elapsedTime) * 0.1;
-    }
+  useFrame((state) => {
+    if (!meshRef.current) return;
+    const t = clamp01((state.clock.elapsedTime - delay) / 0.9);
+    const e = easeOutCubic(t);
+    meshRef.current.position.lerpVectors(from.current, to.current, e);
+    meshRef.current.scale.setScalar(e);
+    const mat = meshRef.current.material as THREE.MeshStandardMaterial;
+    mat.opacity = opacity * e;
   });
 
   return (
-    <mesh ref={meshRef} position={position}>
-      <boxGeometry args={[1 * scale, 1 * scale, 1 * scale]} />
-      <meshStandardMaterial color={color} roughness={0.5} metalness={0.8} />
+    <mesh ref={meshRef} position={position} scale={0}>
+      <boxGeometry args={size} />
+      <meshStandardMaterial
+        color={color}
+        roughness={0.55}
+        metalness={0.15}
+        transparent
+        opacity={opacity}
+        wireframe={wireframe}
+      />
     </mesh>
   );
 };
 
-// Main scene component
+const House = () => {
+  const groupRef = useRef<THREE.Group>(null);
+
+  useFrame((state, delta) => {
+    if (!groupRef.current) return;
+    groupRef.current.rotation.y += delta * 0.35;
+    groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.35) * 0.06;
+  });
+
+  return (
+    <group ref={groupRef} position={[0, -0.5, 0]}>
+      <HousePart position={[0, -1.7, 0]} size={[6.4, 0.2, 4.6]} delay={0.0} color="#1E3A8A" opacity={0.25} />
+      <HousePart position={[0, -1.55, 0]} size={[6.2, 0.12, 4.4]} delay={0.2} color="#F97316" opacity={0.35} wireframe />
+
+      <HousePart position={[-2.9, -0.55, -2.0]} size={[0.18, 2.1, 0.18]} delay={0.45} color="#1E3A8A" wireframe />
+      <HousePart position={[2.9, -0.55, -2.0]} size={[0.18, 2.1, 0.18]} delay={0.55} color="#1E3A8A" wireframe />
+      <HousePart position={[-2.9, -0.55, 2.0]} size={[0.18, 2.1, 0.18]} delay={0.65} color="#1E3A8A" wireframe />
+      <HousePart position={[2.9, -0.55, 2.0]} size={[0.18, 2.1, 0.18]} delay={0.75} color="#1E3A8A" wireframe />
+
+      <HousePart position={[0, 0.45, -2.0]} size={[6.2, 0.16, 0.18]} delay={0.9} color="#1E3A8A" wireframe />
+      <HousePart position={[0, 0.45, 2.0]} size={[6.2, 0.16, 0.18]} delay={1.05} color="#1E3A8A" wireframe />
+      <HousePart position={[-2.9, 0.45, 0]} size={[0.18, 0.16, 4.4]} delay={1.2} color="#1E3A8A" wireframe />
+      <HousePart position={[2.9, 0.45, 0]} size={[0.18, 0.16, 4.4]} delay={1.35} color="#1E3A8A" wireframe />
+
+      <HousePart position={[-1.6, -0.35, -2.0]} size={[0.18, 1.4, 0.18]} delay={1.55} color="#F97316" wireframe />
+      <HousePart position={[1.6, -0.35, -2.0]} size={[0.18, 1.4, 0.18]} delay={1.65} color="#F97316" wireframe />
+      <HousePart position={[0, 0.25, -2.0]} size={[3.8, 0.14, 0.18]} delay={1.8} color="#F97316" wireframe />
+
+      <HousePart position={[0, 1.2, 0]} size={[6.0, 0.14, 4.2]} delay={2.0} color="#1E3A8A" opacity={0.18} />
+      <HousePart position={[0, 1.35, 0]} size={[6.2, 0.14, 4.4]} delay={2.2} color="#F97316" opacity={0.25} wireframe />
+    </group>
+  );
+};
+
 const LoadingScene = () => {
   return (
     <>
       <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#0080ff" />
+      <ambientLight intensity={0.55} />
+      <directionalLight position={[8, 10, 6]} intensity={1.1} />
+      <pointLight position={[-8, -6, -6]} intensity={0.6} color="#F97316" />
 
-      {/* Create multiple building blocks in different positions */}
-      <BuildingBlock
-        position={[-3, 0, 0]}
-        color="#2563eb"
-        scale={0.8}
-        rotationSpeed={0.02}
-      />
-      <BuildingBlock
-        position={[-1.5, 1, 0]}
-        color="#1d4ed8"
-        scale={1.2}
-        rotationSpeed={0.015}
-      />
-      <BuildingBlock
-        position={[0, -0.5, 1]}
-        color="#3b82f6"
-        scale={1}
-        rotationSpeed={0.01}
-      />
-      <BuildingBlock
-        position={[2, 0.5, -1]}
-        color="#60a5fa"
-        scale={0.9}
-        rotationSpeed={0.025}
-      />
-      <BuildingBlock
-        position={[3.5, -1, 0]}
-        color="#93c5fd"
-        scale={1.1}
-        rotationSpeed={0.018}
-      />
-
-      {/* Add text */}
+      <House />
       <Text
         position={[0, -3, 0]}
         color="white"
@@ -94,7 +101,7 @@ const LoadingScene = () => {
         anchorX="center"
         anchorY="middle"
       >
-        Building your experience...
+        กำลังก่อสร้างประสบการณ์ของคุณ...
       </Text>
     </>
   );

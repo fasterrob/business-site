@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Vision() {
   return (
-    <main className="min-h-screen bg-gray-900">
+    <main className="min-h-screen bg-slate-50">
       {/* Hero Section */}
       <section className="relative h-[50vh] bg-black flex items-center">
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -19,29 +19,26 @@ export default function Vision() {
         <div className="container mx-auto px-4 z-10 relative">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Vision
+              วิสัยทัศน์ของเรา
             </h1>
             <p className="text-xl text-white/80">
-              Showcasing our commitment to excellence in building and
-              construction through our core values and achievements.
+              สะท้อนความมุ่งมั่นของเราในการส่งมอบงานก่อสร้างคุณภาพ ผ่านคุณค่าและผลงานที่พิสูจน์ได้
             </p>
           </div>
         </div>
       </section>
 
       {/* Vision Statement */}
-      <section className="py-16 px-4 bg-gray-800">
+      <section className="py-16 px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Our Vision</h2>
-          <p className="text-lg text-gray-300 mb-8">
-            We strive to be a leader in the building industry, delivering
-            quality, innovation, and sustainability in every project. Our
-            mission is to transform spaces into functional, beautiful
-            environments that stand the test of time.
+          <h2 className="text-3xl font-bold mb-6 text-blue-900">วิสัยทัศน์</h2>
+          <p className="text-lg text-slate-600 mb-8">
+            เรามุ่งสู่การเป็นผู้นำด้านงานก่อสร้าง ด้วยมาตรฐานคุณภาพ นวัตกรรม และความยั่งยืนในทุกโครงการ
+            เป้าหมายของเราคือเปลี่ยนพื้นที่ให้ใช้งานได้จริง สวยงาม และคงทนในระยะยาว
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="p-6 bg-gray-900 rounded-lg shadow-md">
-              <div className="text-blue-400 text-4xl mb-4">
+            <div className="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+              <div className="text-orange-500 text-4xl mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-12 w-12 mx-auto"
@@ -57,14 +54,14 @@ export default function Vision() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-white">Quality</h3>
-              <p className="text-gray-300">
+              <h3 className="text-xl font-semibold mb-2 text-blue-900">Quality</h3>
+              <p className="text-slate-600">
                 We never compromise on quality, ensuring every detail meets our
                 high standards.
               </p>
             </div>
-            <div className="p-6 bg-gray-900 rounded-lg shadow-md">
-              <div className="text-blue-400 text-4xl mb-4">
+            <div className="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+              <div className="text-orange-500 text-4xl mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-12 w-12 mx-auto"
@@ -80,14 +77,14 @@ export default function Vision() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Innovation</h3>
-              <p className="text-gray-300">
+              <h3 className="text-xl font-semibold mb-2 text-blue-900">Innovation</h3>
+              <p className="text-slate-600">
                 We embrace new technologies and methods to deliver cutting-edge
                 solutions.
               </p>
             </div>
-            <div className="p-6 bg-gray-900 rounded-lg">
-              <div className="text-blue-400  text-4xl mb-4">
+            <div className="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+              <div className="text-orange-500 text-4xl mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-12 w-12 mx-auto"
@@ -103,10 +100,10 @@ export default function Vision() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-white">
+              <h3 className="text-xl font-semibold mb-2 text-blue-900">
                 Sustainability
               </h3>
-              <p className="text-gray-300">
+              <p className="text-slate-600">
                 We design with the environment in mind, creating sustainable
                 structures for the future.
               </p>
@@ -116,52 +113,50 @@ export default function Vision() {
       </section>
 
       {/* Achievement Section instead of Projects */}
-      <section className="py-16 px-4 bg-gray-900">
+      <section className="py-16 px-4 bg-slate-50">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-white">
-            Our Achievements
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">ความสำเร็จของเรา</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-blue-500/20 transition-shadow">
-              <div className="text-blue-400 text-4xl mb-4 font-bold">25+</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">
+            <div className="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-orange-500 text-4xl mb-4 font-bold">25+</div>
+              <h3 className="text-xl font-semibold mb-2 text-blue-900">
                 Years of Experience
               </h3>
-              <p className="text-gray-300">
+              <p className="text-slate-600">
                 Delivering exceptional building services with expertise and
                 precision.
               </p>
             </div>
 
-            <div className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-blue-500/20 transition-shadow">
-              <div className="text-blue-400 text-4xl mb-4 font-bold">500+</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">
+            <div className="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-orange-500 text-4xl mb-4 font-bold">500+</div>
+              <h3 className="text-xl font-semibold mb-2 text-blue-900">
                 Projects Completed
               </h3>
-              <p className="text-gray-300">
+              <p className="text-slate-600">
                 Successfully delivered projects across commercial and
                 residential sectors.
               </p>
             </div>
 
-            <div className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-blue-500/20 transition-shadow">
-              <div className="text-blue-400 text-4xl mb-4 font-bold">15</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">
+            <div className="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-orange-500 text-4xl mb-4 font-bold">15</div>
+              <h3 className="text-xl font-semibold mb-2 text-blue-900">
                 Industry Awards
               </h3>
-              <p className="text-gray-300">
+              <p className="text-slate-600">
                 Recognized for excellence in design, sustainability, and
                 innovation.
               </p>
             </div>
 
-            <div className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-blue-500/20 transition-shadow">
-              <div className="text-blue-400 text-4xl mb-4 font-bold">100%</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">
+            <div className="bg-white border border-slate-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-orange-500 text-4xl mb-4 font-bold">100%</div>
+              <h3 className="text-xl font-semibold mb-2 text-blue-900">
                 Client Satisfaction
               </h3>
-              <p className="text-gray-300">
+              <p className="text-slate-600">
                 Our commitment to quality ensures happy clients and successful
                 projects.
               </p>
@@ -171,9 +166,9 @@ export default function Vision() {
           <div className="text-center mt-10">
             <Link
               href="/project"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg transition-colors"
             >
-              View Our Project Portfolio
+              ดูผลงานโครงการ
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-2"
@@ -197,11 +192,10 @@ export default function Vision() {
       <section className="py-16 px-4 bg-blue-900 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">
-            Ready to Start Your Project?
+            พร้อมเริ่มโครงการของคุณแล้วหรือยัง?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let us transform your vision into reality with our expertise and
-            dedication to excellence.
+            ให้เราช่วยเปลี่ยนไอเดียของคุณให้เป็นผลงานจริง ด้วยทีมงานมืออาชีพและความใส่ใจในคุณภาพ
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <button className="px-8 py-3 bg-white text-blue-900 font-medium rounded-lg hover:bg-blue-50 transition-colors">
@@ -209,7 +203,7 @@ export default function Vision() {
             </button>
             <Link
               href="/project"
-              className="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg_white/10 transition-colors"
+              className="px-8 py-3 bg-transparent border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors"
             >
               View Our Projects
             </Link>

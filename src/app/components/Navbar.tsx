@@ -7,7 +7,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 border-b border-gray-800 shadow-md">
+    <nav className="bg-blue-900 border-b border-blue-950/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
@@ -26,15 +26,15 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center space-x-4">
             {[
-              { href: "/vision", label: "Vision" },
-              { href: "/ourservices", label: "Our Services" },
-              { href: "/project", label: "Projects" },
-              { href: "/contact", label: "Contact" },
+              { href: "/vision", label: "วิสัยทัศน์" },
+              { href: "/ourservices", label: "บริการ" },
+              { href: "/project", label: "ผลงาน" },
+              { href: "/contact", label: "ติดต่อ" },
             ].map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white hover:bg-gray-800 hover:text-blue-400 px-4 py-2 rounded-md text-base font-medium transition duration-200 relative group"
+                className="text-white/90 hover:text-orange-500 hover:bg-white/10 px-4 py-2 rounded-md text-base font-medium transition duration-200 relative group"
               >
                 <span className="z-10 relative">{item.label}</span>
               </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               type="button"
-              className="text-white hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="text-white hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/60 transition"
               aria-label="Toggle menu"
               onClick={() => setMobileOpen((v) => !v)}
               aria-expanded={mobileOpen}
@@ -90,7 +90,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden transition-all duration-300 bg-gray-900 shadow-lg z-50 ${
+        className={`md:hidden transition-all duration-300 bg-blue-900 shadow-lg z-50 ${
           mobileOpen
             ? "max-h-96 opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"
@@ -99,16 +99,16 @@ export default function Navbar() {
       >
         <div className="flex flex-col items-center gap-2 px-4 pt-3 pb-6">
           {[
-            { href: "/", label: "Home" },
-            { href: "/vision", label: "Vision" },
-            { href: "/ourservices", label: "Our Services" },
-            { href: "/project", label: "Projects" },
-            { href: "/contact", label: "Contact" },
+            { href: "/", label: "หน้าแรก" },
+            { href: "/vision", label: "วิสัยทัศน์" },
+            { href: "/ourservices", label: "บริการ" },
+            { href: "/project", label: "ผลงาน" },
+            { href: "/contact", label: "ติดต่อ" },
           ].map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="w-full text-center text-white hover:bg-gray-800 hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors"
+              className="w-full text-center text-white/90 hover:bg-white/10 hover:text-orange-500 px-3 py-2 rounded-md text-lg font-medium transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {item.label}
@@ -116,10 +116,10 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="mt-2 w-full text-center bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold px-4 py-2 rounded-lg transition shadow"
+            className="mt-2 w-full text-center bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-bold px-4 py-2 rounded-lg transition shadow"
             onClick={() => setMobileOpen(false)}
           >
-            Get Started
+            ขอใบเสนอราคา
           </Link>
         </div>
       </div>

@@ -143,7 +143,7 @@ export default function OurServices() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-900 text-white">
+    <main className="min-h-screen bg-slate-50 text-slate-500">
       {/* Hero Section */}
       <section className="relative h-[50vh] bg-black flex items-center">
         <div className="absolute inset-0 overflow-hidden z-0">
@@ -157,41 +157,41 @@ export default function OurServices() {
         </div>
         <div className="container mx-auto px-4 z-10 relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">บริการของเรา</h1>
             <p className="text-xl text-white/80">
-              Comprehensive building and construction services tailored to your specific needs and vision.
+              บริการก่อสร้างครบวงจร ออกแบบ-ก่อสร้าง-บริหารโครงการ ให้เหมาะกับงบประมาณและเป้าหมายของคุณ
             </p>
           </div>
         </div>
       </section>
       
       {/* Services Grid */}
-      <section className="py-16 px-4 bg-gray-900">
+      <section className="py-16 px-4 bg-slate-50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">What We Offer</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-blue-900">บริการที่เรามี</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Our comprehensive range of services covers all aspects of building and construction, ensuring a seamless experience from concept to completion.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map(service => (
-              <div key={service.id} className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-blue-500/20 hover:-translate-y-1 hover:shadow-xl">
+              <div key={service.id} className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-shadow hover:shadow-md">
                 <div className="p-8">
-                  <div className="text-blue-400 mb-5">
+                  <div className="text-orange-500 mb-5">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-blue-900">{service.title}</h3>
+                  <p className="text-slate-600 mb-6">{service.description}</p>
                   
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <svg className="h-5 w-5 text-blue-400 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-5 w-5 text-orange-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-gray-300">{feature}</span>
+                        <span className="text-slate-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -203,21 +203,21 @@ export default function OurServices() {
       </section>
       
       {/* Our Process */}
-      <section className="py-16 px-4 bg-gray-800">
+      <section className="py-16 px-4 bg-slate-100">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">Our Process</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-blue-900">ขั้นตอนการทำงาน</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               We follow a structured approach to ensure your project is delivered efficiently and to the highest standards.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((step, index) => (
-              <div key={index} className="bg-gray-900 p-8 rounded-xl relative">
-                <span className="text-5xl font-bold text-blue-500/20 absolute top-4 right-4">{step.number}</span>
-                <h3 className="text-xl font-bold mb-3 mt-6">{step.title}</h3>
-                <p className="text-gray-300">{step.description}</p>
+              <div key={index} className="bg-white border border-slate-200 p-8 rounded-xl relative shadow-sm">
+                <span className="text-5xl font-bold text-orange-500/20 absolute top-4 right-4">{step.number}</span>
+                <h3 className="text-xl font-bold mb-3 mt-6 text-blue-900">{step.title}</h3>
+                <p className="text-slate-600">{step.description}</p>
               </div>
             ))}
           </div>
@@ -225,17 +225,17 @@ export default function OurServices() {
       </section>
       
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-gray-900">
+      <section className="py-16 px-4 bg-slate-50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">What Our Clients Say</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-blue-900">เสียงจากลูกค้า</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Don't just take our word for it – hear from some of our satisfied clients.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-gray-800 p-8 rounded-xl">
+            <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -243,16 +243,16 @@ export default function OurServices() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-slate-600 mb-4">
                 "The team's attention to detail and commitment to quality was evident throughout our office building project. They met deadlines, stayed within budget, and delivered an exceptional result."
               </p>
               <div>
-                <p className="font-semibold">Sarah Johnson</p>
-                <p className="text-gray-400 text-sm">CEO, Tech Innovations Inc.</p>
+                <p className="font-semibold text-blue-900">Sarah Johnson</p>
+                <p className="text-slate-500 text-sm">CEO, Tech Innovations Inc.</p>
               </div>
             </div>
             
-            <div className="bg-gray-800 p-8 rounded-xl">
+            <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -260,12 +260,12 @@ export default function OurServices() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-slate-600 mb-4">
                 "From design to completion, our home renovation exceeded all expectations. The team was professional, communicative, and truly brought our vision to life."
               </p>
               <div>
-                <p className="font-semibold">Michael Chang</p>
-                <p className="text-gray-400 text-sm">Homeowner</p>
+                <p className="font-semibold text-blue-900">Michael Chang</p>
+                <p className="text-slate-500 text-sm">Homeowner</p>
               </div>
             </div>
           </div>
@@ -275,12 +275,12 @@ export default function OurServices() {
       {/* Call to Action */}
       <section className="py-16 px-4 bg-blue-900">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-3xl font-bold mb-6">พร้อมเริ่มงานกับเราแล้วหรือยัง?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let's discuss your project needs and how we can bring your vision to life.
+            คุยรายละเอียดโครงการของคุณ แล้วให้เราช่วยวางแผนและลงมือสร้างให้เป็นจริง
           </p>
-          <button className="px-8 py-3 bg-white text-blue-900 font-medium rounded-lg hover:bg-blue-50 transition-colors">
-            Contact Us Today
+          <button className="px-8 py-3 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition-colors">
+            ติดต่อเพื่อขอใบเสนอราคา
           </button>
         </div>
       </section>
